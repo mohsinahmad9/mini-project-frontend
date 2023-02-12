@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .col {width:40%;  min-height:400px; float:left; margin:20px;}
+        .showcase img {width:70%;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="showcase">
+                    <img id="image1"  src="" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="details">
+                    <h1 id="title">Title</h1>
+                    <h3 id="desc">Description</h3>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        query_str = new URLSearchParams(window.location.search);
+        id = query_str.get('id');
+        
+
+
+        products = [
+            {title:'Powerpoint Course',imgurl:'images/c1.png',desc:'Learn to make presentation in powerpoint'},
+            {title:'Java Expert Training',imgurl:'images/c5.png',desc:'Java - core course in credible academy'},
+            {title:'C Course',imgurl:'images/c3.png',desc:'C Programming language training'},
+            {title:'Web designing training',imgurl:'images/c4.png',desc:'Html, css, javscript training with project'}
+        ]
+        document.getElementById("image1").src = products[id].imgurl;
+        document.getElementById("title").innerHTML = products[id].title;
+        document.getElementById("desc").innerHTML = products[id].desc;
+        
+
+
+    </script>
+</body>
+</html>
